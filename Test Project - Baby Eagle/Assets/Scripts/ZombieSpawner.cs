@@ -34,10 +34,10 @@ public class ZombieSpawner : MonoBehaviour
 
         if (Random.Range(0f, 1f) < 0.5)
         {
-            // Spawn Dwarf on top
+            // Spawn on top
             new_zombie.transform.position = new Vector3(Random.Range(-9.5f,9.5f), Random.Range(5.5f,7.5f), new_zombie.transform.position.z);
         } else {
-            // Spawn Dwarf on bottom
+            // Spawn on bottom
             new_zombie.transform.position = new Vector3(Random.Range(-9.5f,9.5f), Random.Range(-7.5f,-5.5f), new_zombie.transform.position.z);
         }
         
