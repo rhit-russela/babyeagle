@@ -11,10 +11,10 @@ public class Singleton<T> : MonoBehaviour where T : Component
         if (_instance == null)
         {
             _instance = this as T;
-            DontDestroyOnLoad(gameObject);
+            // DontDestroyOnLoad(gameObject);
         } else {
-            Destroy(gameObject);
-            Debug.LogFormat("Found second instance of {0}, Destroying myself...", typeof(T).Name);
+            // Destroy(gameObject);
+            // Debug.LogFormat("Found second instance of {0}, Destroying myself...", typeof(T).Name);
         }
     }
 

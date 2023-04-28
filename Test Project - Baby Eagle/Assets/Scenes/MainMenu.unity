@@ -455,7 +455,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 294938938}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 294938940}
+        m_TargetAssemblyTypeName: HowToPlayButtonLoader, Assembly-CSharp
+        m_MethodName: onClickLoad
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &294938938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -706,6 +718,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &791955494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 791955496}
+  - component: {fileID: 791955495}
+  m_Layer: 0
+  m_Name: LoadSceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &791955495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791955494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 270deb74fa1523a48b6ee1a094439e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &791955496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791955494}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.27917975, y: 0.5111235, z: -1.2899474}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1070373215
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,6 +990,7 @@ GameObject:
   - component: {fileID: 1949473867}
   - component: {fileID: 1949473866}
   - component: {fileID: 1949473865}
+  - component: {fileID: 1949473868}
   m_Layer: 5
   m_Name: StartGame
   m_TagString: Untagged
@@ -1005,7 +1061,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1949473866}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1949473868}
+        m_TargetAssemblyTypeName: StartButtonLoader, Assembly-CSharp
+        m_MethodName: onClickLoad
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1949473866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1044,3 +1112,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949473863}
   m_CullTransparentMesh: 1
+--- !u!114 &1949473868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949473863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34215f3d02a21d4489b242b6524a6800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
