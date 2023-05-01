@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/HowToPlay.unity
     guid: fe424d27ec741cd49b07ab76c640f823
   - enabled: 1
-    path: Assets/Scenes/EndGameScene.unity
+    path: Assets/Scenes/WonGameScreen.unity
     guid: 9bde07ea28f21824a882063aeb8a1b65
+  - enabled: 1
+    path: Assets/Scenes/LostGameScreen.unity
+    guid: 3a4de4e15327c5f4c87fce0c219e8c63
   m_configObjects: {}

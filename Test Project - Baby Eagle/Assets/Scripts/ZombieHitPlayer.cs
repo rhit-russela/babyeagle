@@ -8,7 +8,7 @@ public class ZombieHitPlayer : MonoBehaviour
     {
         if (collision.gameObject == GameManager.Instance.GetPlayer())
         {
-            EventBus.Publish(EventBus.EventType.EndGame);
+            EventBus.Publish(EventBus.EventType.LostGame);
         }
     }
 }

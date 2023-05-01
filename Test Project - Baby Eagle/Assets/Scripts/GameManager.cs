@@ -9,14 +9,17 @@ public class GameManager : Singleton<GameManager>
 {
 
     GameObject _player;
+    public int currentScore;
 
     [SerializeField] GameObject playerPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        _player = Instantiate(playerPrefab);  
-        EventBus.Subscribe(EventBus.EventType.EndGame, EndGame);
+        _player = Instantiate(playerPrefab);
+        currentScore = 0;
+        EventBus.Subscribe(EventBus.EventType.WonGame, WinGame);
+        EventBus.Subscribe(EventBus.EventType.LostGame, LoseGame);
     }
 
     // Update is called once per frame
@@ -26,19 +29,29 @@ public class GameManager : Singleton<GameManager>
         {
             _player = Instantiate(playerPrefab);
         }
+        
     }
 
-    void EndGame()
+    void WinGame()
     {
         Debug.Log("Ending Game...");
-        SceneManager.LoadScene("EndGameScene");
+        SceneManager.LoadScene("WonGameScreen");
+        Destroy(_player);
+        CleanupListeners();
+    }
+
+    void LoseGame()
+    {
+        Debug.Log("Losing Game...");
+        SceneManager.LoadScene("LostGameScreen");
         Destroy(_player);
         CleanupListeners();
     }
 
     void CleanupListeners()
     {
-        EventBus.Unsubscribe(EventBus.EventType.EndGame, EndGame);
+        EventBus.Unsubscribe(EventBus.EventType.WonGame, WinGame);
+        EventBus.Unsubscribe(EventBus.EventType.LostGame, LoseGame);
     }
 
     public GameObject GetPlayer()

@@ -35,6 +35,7 @@ public class ZombieMove : MonoBehaviour
 
     private void OnMouseDown()
     {
+        EventBus.Publish(EventBus.EventType.KillsUpdate);
         Destroy(gameObject);
     }
 }

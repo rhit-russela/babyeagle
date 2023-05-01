@@ -5,7 +5,6 @@ using TMPro;
 
 public class TimerTextHookup : MonoBehaviour
 {
-
     public float timeRemaining = 60.0f;
 
     // Start is called before the first frame update
@@ -21,7 +20,7 @@ public class TimerTextHookup : MonoBehaviour
             TMP_Text text = GetComponent<TMP_Text>();
             text.text = "Time Left: " + (Mathf.Round(timeRemaining - Time.timeSinceLevelLoad)).ToString();
         } else {
-            EventBus.Publish(EventBus.EventType.EndGame);
+            EventBus.Publish(EventBus.EventType.WonGame);
         }
     }
 }
