@@ -10,7 +10,7 @@ public class TimerTextHookup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        EventBus.Subscribe(EventBus.EventType.TimerUpdate, AddedTime);
     }
 
     // Update is called once per frame
@@ -22,5 +22,13 @@ public class TimerTextHookup : MonoBehaviour
         } else {
             EventBus.Publish(EventBus.EventType.WonGame);
         }
+    }
+
+    void AddedTime(){
+        timeRemaining = timeRemaining + 5f;
+    }
+
+    void OnDestroy(){
+        EventBus.Unsubscribe(EventBus.EventType.TimerUpdate, AddedTime);
     }
 }

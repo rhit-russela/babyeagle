@@ -7,7 +7,6 @@ public class ZombieMove : MonoBehaviour
 
     public float speed = 2.5f;
     private CircleCollider2D _collider;
-    private bool endGame = false;
     private Vector2 direction;
 
     // Start is called before the first frame update
@@ -35,7 +34,7 @@ public class ZombieMove : MonoBehaviour
 
     private void OnMouseDown()
     {
-        EventBus.Publish(EventBus.EventType.KillsUpdate);
+        LoadSceneManager.Instance.UpdateZombieScore();
         Destroy(gameObject);
     }
 }

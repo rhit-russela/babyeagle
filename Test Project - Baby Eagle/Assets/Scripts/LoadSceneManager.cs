@@ -4,11 +4,20 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class LoadSceneManager : MonoBehaviour
+public class LoadSceneManager : Singleton<LoadSceneManager>
 {
+    
+    private int _currentScore;
+
+    public int CurrentScore {get => _currentScore;
+        set{
+            _currentScore = value;
+            EventBus.Publish(EventBus.EventType.KillsUpdate);
+        }}
     // Start is called before the first frame update
     void Start()
     {
+        //CurrentScore = 0;
         SetupListeners();
     }
 
@@ -52,5 +61,10 @@ public class LoadSceneManager : MonoBehaviour
         EventBus.Unsubscribe(EventBus.EventType.StartGame, LoadStartGame);
         EventBus.Unsubscribe(EventBus.EventType.StartTutorial, LoadTutorial);
         EventBus.Unsubscribe(EventBus.EventType.StartMainMenu, LoadMainMenu);
+    }
+
+    public void UpdateZombieScore()
+    {
+        CurrentScore += 100;
     }
 }

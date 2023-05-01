@@ -9,7 +9,6 @@ public class GameManager : Singleton<GameManager>
 {
 
     GameObject _player;
-    public int currentScore;
 
     [SerializeField] GameObject playerPrefab;
 
@@ -17,7 +16,6 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         _player = Instantiate(playerPrefab);
-        currentScore = 0;
         EventBus.Subscribe(EventBus.EventType.WonGame, WinGame);
         EventBus.Subscribe(EventBus.EventType.LostGame, LoseGame);
     }
